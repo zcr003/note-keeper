@@ -66,6 +66,17 @@ public class NoteViewModel extends AndroidViewModel implements LifecycleObserver
     );
   }
 
+  public void delete(Note note) {
+    pending.add(
+        repository
+            .delete(note)
+            .subscribe(
+                () -> {},
+                this ::postThrowable
+            )
+    );
+  }
+
   private void postThrowable(Throwable throwable) {
     Log.e(getClass().getSimpleName(), throwable.getMessage(), throwable);
     this.throwable.postValue(throwable);
