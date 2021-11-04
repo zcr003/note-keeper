@@ -44,13 +44,7 @@ public interface NoteDao {
   @Query("SELECT * FROM note WHERE note_id = :noteId")
   LiveData<Note> select(long noteId);
 
-  @Query("SELECT * FROM note ORDER BY created DESC")
-  LiveData<List<Note>> selectAllOrderByCreatedDesc();
-
-  @Query("SELECT * FROM note ORDER BY updated DESC")
-  LiveData<List<Note>> selectAllOrderByUpdatedDesc();
-
   @Query("SELECT * FROM note ORDER BY subject ASC")
-  LiveData<List<Note>> selectAllOrderBySubjectAsc();
+  LiveData<List<Note>> select();
 
 }
