@@ -18,7 +18,7 @@ public class Note {
 
   @NonNull
   @ColumnInfo(index = true)
-  private Date created = new Date();
+  private Date created;
 
   @NonNull
   @ColumnInfo(index = true)
@@ -74,5 +74,7 @@ public class Note {
   public void setText(@NonNull String text) {
     this.text = text;
   }
+
+
 
 }
