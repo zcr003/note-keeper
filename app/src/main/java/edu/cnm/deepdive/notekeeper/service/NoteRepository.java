@@ -36,7 +36,7 @@ public class NoteRepository {
     Single<Note> task;
     note.setUpdated(new Date());
     if (note.getId() == 0) {
-      note.setUpdated(note.getUpdated());
+      note.setCreated(note.getUpdated());
       task = noteDao
           .insert(note)
           .map((id) -> {
